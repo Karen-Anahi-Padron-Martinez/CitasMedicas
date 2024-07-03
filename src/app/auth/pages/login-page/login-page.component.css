@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+  background-color: #599ced;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+mat-card {
+  width: 100%;
+  max-width: 600px; /* Ajuste del ancho máximo */
+  padding: 32px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: white;
+  border-radius: 8px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #060816;
+}
+
+header h2 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #757575;
+}
+
+.icon-container {
+  text-align: center;
+  margin-bottom: 24px;
+  height: 60px; /* Asegura que haya suficiente altura */
+}
+
+mat-icon {
+  font-size: 60px;
+  color: #3f51b5;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+mat-checkbox {
+  margin-bottom: 24px;
+}
+
+.button-container {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+button {
+  width: 100%;
+}
+
+.links {
+  text-align: center;
+}
+
+.links a {
+  text-decoration: none;
+  color: #3f51b5;
+}
+/* styles.css */
+
+.custom-button {
+  background-color: #007bff; /* Azul */
+  color: white; /* Texto blanco */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: #0056b3; /* Azul más oscuro */
+}
+.custom-small-button {
+  font-size: 12px;
+  padding: 4px 8px; /* Ajusta el relleno según tus necesidades */
+  min-width: auto; /* Quita el ancho mínimo de Angular Material */
+  height: 24px; /* Altura personalizada */
+  line-height: 24px; /* Alineación vertical del texto */
+}
+
+
+

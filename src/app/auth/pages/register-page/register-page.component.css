@@ -1,0 +1,48 @@
+body {
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #599ced;
+  }
+  
+  .container {
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  mat-card {
+    padding: 16px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  button {
+    width: 100%;
+  }
+  
+  .name-fields, .password-fields {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .confirmation-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  .small-button {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  
+  

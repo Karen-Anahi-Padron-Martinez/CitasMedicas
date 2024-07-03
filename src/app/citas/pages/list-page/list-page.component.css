@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px;
+  }
+  
+  .calendar-card, .schedule-card {
+    width: 45%;
+  }
+  
+  .day-header {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .time-slot {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+    padding: 10px;
+  }
+  
