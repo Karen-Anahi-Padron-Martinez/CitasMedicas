@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link rel="stylesheet" href="register-page.component.css">
+</head>
+<body>
+  <div class="container" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <mat-card style="max-width: 600px; width: 100%; padding: 16px;">
+      <div id="registration-form">
+        <h1>Registro</h1>
+        <form id="registerForm">
+          <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 16px;">
+            <mat-label>Direccion de correo / número de teléfono</mat-label>
+            <input matInput type="text" id="email" name="email" required>
+          </mat-form-field>
+
+          <div class="name-fields" style="display: flex; gap: 16px; margin-bottom: 16px;">
+            <mat-form-field appearance="outline" style="flex: 1;">
+              <mat-label>Nombre (s)</mat-label>
+              <input matInput type="text" id="firstname" name="firstname" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="flex: 1;">
+              <mat-label>Apellidos</mat-label>
+              <input matInput type="text" id="lastname" name="lastname" required>
+            </mat-form-field>
+          </div>
+
+          <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 16px;">
+            <mat-label>Selecciona un nombre de usuario</mat-label>
+            <input matInput type="text" id="username" name="username" required>
+          </mat-form-field>
+
+          <div class="password-fields" style="display: flex; gap: 16px; margin-bottom: 16px;">
+            <mat-form-field appearance="outline" style="flex: 1;">
+              <mat-label>Establece una Contraseña</mat-label>
+              <input matInput type="password" id="password" name="password" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="flex: 1;">
+              <mat-label>Confirma tu Contraseña</mat-label>
+              <input matInput type="password" id="confirm_password" name="confirm_password" required>
+            </mat-form-field>
+          </div>
+
+          <div style="text-align: center; margin-bottom: 16px;">
+            <button mat-button [routerLink]="['/auth/new-new-account']" color="primary">Registrarse</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="confirmation-form" style="display:none;">
+        <h1>CODIGO DE CONFIRMACION</h1>
+        <p>Se envió a tu Dirección de correo/ número un código de confirmación para verificar tu identidad</p>
+        <form id="confirmForm">
+          <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 16px;">
+            <mat-label>Código de confirmación</mat-label>
+            <input matInput type="text" id="confirmationCode" name="confirmationCode" required>
+          </mat-form-field>
+          <div style="display: flex; justify-content: space-between;">
+            <button mat-raised-button color="primary" type="button" onclick="verifyCode()">Verificar</button>
+            <button mat-raised-button color="accent" type="button" onclick="resendCode()">Reenviar</button>
+          </div>
+        </form>
+      </div>
+    </mat-card>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+

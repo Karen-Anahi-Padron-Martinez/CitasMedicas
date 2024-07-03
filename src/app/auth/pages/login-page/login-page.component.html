@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Departamento Psicopedagogico - Citas</title>
+  <link rel="stylesheet" href="login-page.component.css">
+</head>
+<body>
+  <div class="container">
+    <mat-card>
+      <header>
+        <h1>Departamento Psicopedagogico</h1>
+        <h2>Citas</h2>
+      </header>
+      <main>
+        <form>
+          <div class="icon-container">
+            <mat-icon>person</mat-icon>
+          </div>
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre de Usuario o dirección de correo</mat-label>
+            <input matInput type="text" id="username" name="username">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" id="password" name="password">
+          </mat-form-field>
+          <mat-checkbox id="remember" name="remember">Recuérdame</mat-checkbox>
+          <div class="button-container">
+            <button mat-raised-button color="primary" type="submit">Acceder</button>
+          </div>
+          <div class="links">
+            <button mat-button [routerLink]="['/auth/new-new-account']" color="primary" class="custom-small-button">Registrarse</button>
+
+            <span>|</span>
+            <button mat-button [routerLink]="['/auth/forgot-password']" color="primary">¿Olvidé mi contraseña?</button>
+
+          </div>
+        </form>
+      </main>
+    </mat-card>
+  </div>
+</body>
+</html>
