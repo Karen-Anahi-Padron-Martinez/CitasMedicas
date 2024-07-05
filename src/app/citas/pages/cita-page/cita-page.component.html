@@ -1,54 +1,73 @@
-<div class="container">
-    <mat-card>
-      <mat-toolbar color="primary">
-        <span>Citas</span>
-      </mat-toolbar>
-  
-      <form>
-        <mat-form-field appearance="fill">
-          <mat-label>Nombre del alumno</mat-label>
-          <input matInput required>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Área académica</mat-label>
-          <input matInput required>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Grupo</mat-label>
-          <input matInput required>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Número de control</mat-label>
-          <input matInput required>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Fecha y hora</mat-label>
-          <input matInput [matDatepicker]="picker" required>
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-  
-        <button mat-raised-button color="warn" type="reset">Limpiar</button>
-        <button mat-raised-button color="primary" type="submit">Enviar</button>
-      </form>
-    </mat-card>
-  
-  
-    <mat-card>
-      <mat-calendar></mat-calendar>
-      <p>Si quieres agendar una cita rellena el formulario y da click en "Enviar", el apartado login es exclusivo para el departamento psicopedagógico.</p>
-    </mat-card>
-  
-    <mat-card>
-      <p>Número de teléfono: ********** <mat-icon>whatsapp</mat-icon></p>
-      <p>Correo electrónico: *******utng.edu.mx <mat-icon>email</mat-icon></p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link rel="stylesheet" href="cita-page.component.css">
+</head>
+<body>
+  <div class="container" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <mat-card style="max-width: 600px; width: 100%; padding: 16px;">
+      <div id="registration-form">
+        <h1>Registro</h1>
+        <form id="registerForm">
+          <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 16px;">
+            <mat-label>Direccion de correo / número de teléfono</mat-label>
+            <input matInput type="text" id="email" name="email" required>
+          </mat-form-field>
+
+          <div class="name-fields" style="display: flex; gap: 16px; margin-bottom: 16px;">
+            <mat-form-field appearance="outline" style="flex: 1;">
+              <mat-label>Nombre (s)</mat-label>
+              <input matInput type="text" id="firstname" name="firstname" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="flex: 1;">
+              <mat-label>Apellidos</mat-label>
+              <input matInput type="text" id="lastname" name="lastname" required>
+            </mat-form-field>
+          </div>
+
+          <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 16px;">
+            <mat-label>Selecciona un nombre de usuario</mat-label>
+            <input matInput type="text" id="username" name="username" required>
+          </mat-form-field>
+
+          <div class="password-fields" style="display: flex; gap: 16px; margin-bottom: 16px;">
+            <mat-form-field appearance="outline" style="flex: 1;">
+              <mat-label>Establece una Contraseña</mat-label>
+              <input matInput type="password" id="password" name="password" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="flex: 1;">
+              <mat-label>Confirma tu Contraseña</mat-label>
+              <input matInput type="password" id="confirm_password" name="confirm_password" required>
+            </mat-form-field>
+          </div>
+
+          <div style="text-align: center; margin-bottom: 16px;">
+            <button mat-button [routerLink]="['/auth/new-new-account']" color="primary">Registrarse</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="confirmation-form" style="display:none;">
+        <h1>CODIGO DE CONFIRMACION</h1>
+        <p>Se envió a tu Dirección de correo/ número un código de confirmación para verificar tu identidad</p>
+        <form id="confirmForm">
+          <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 16px;">
+            <mat-label>Código de confirmación</mat-label>
+            <input matInput type="text" id="confirmationCode" name="confirmationCode" required>
+          </mat-form-field>
+          <div style="display: flex; justify-content: space-between;">
+            <button mat-raised-button color="primary" type="button" onclick="verifyCode()">Verificar</button>
+            <button mat-raised-button color="accent" type="button" onclick="resendCode()">Reenviar</button>
+          </div>
+        </form>
+      </div>
     </mat-card>
   </div>
-  
 
-<router-outlet></router-outlet>
+  <script src="scripts.js"></script>
+</body>
+</html>
 

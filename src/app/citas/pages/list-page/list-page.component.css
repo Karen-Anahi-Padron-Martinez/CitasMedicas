@@ -1,25 +1,148 @@
-.container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 20px;
-  }
-  
-  .calendar-card, .schedule-card {
-    width: 45%;
-  }
-  
-  .day-header {
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .time-slot {
-    background-color: #ffffff;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    margin: 5px;
-    text-align: center;
-    padding: 10px;
-  }
-  
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #bf2558; /* Pastel pink background */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ab47bc; /* Pastel purple */
+  color: white;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  background: linear-gradient(
+    50deg,
+    #07dccb 50%, /* Pastel turquoise */
+    #7fcad4 50%
+  );
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.form-content h2 {
+  color: #7e2aac; /* Deep pastel purple */
+  font-size: 40px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+label {
+  font-size: 17px;
+  color: #d975d1; /* Medium pastel purple */
+  align-self: flex-start;
+}
+
+input, textarea, select {
+  padding: 10px;
+  background-color: #cdf3f3; /* Light pastel purple */
+  border: none;
+  font-size: 15px;
+  color: #000000; /* Deep pastel purple */
+  margin-bottom: 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.btn {
+  background-color: #5496ff; /* Pastel violet */
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn mat-icon {
+  margin-right: 5px;
+}
+
+.calendar-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+}
+
+.calendar-content mat-calendar {
+  width: 100%;
+  height: auto;
+}
+
+.calendar-text {
+  margin-top: 20px;
+  color: #6a1b9a; /* Deep pastel purple */
+  text-align: center;
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px 20px;
+  background-color: #ab47bc; /* Pastel purple */
+  color: rgb(246, 246, 246);
+}
+
+.email-icons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.email-row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.email-row mat-icon {
+  margin-right: 5px;
+}
+
+.date {
+  align-self: flex-end;
+}
+button{
+  color:aqua;
+  width: 200px;
+  height: 50px;
+}
+h1{
+  color: aliceblue;
+}

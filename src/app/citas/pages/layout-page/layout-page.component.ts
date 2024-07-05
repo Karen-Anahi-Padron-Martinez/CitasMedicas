@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class LayoutPageComponent {
 
   public sidebarItems = [
-  {label:'Calendario y Horario',icon:'label', url:'./list'},
-  {label:'Citas',icon:'add', url:'./new-cita'},
-  {label:'Historial del citas', icon: 'search', url:'./search'},
+  {label:'Citas',icon:'label', url:'./list'},
+  {label:'Historial del citas',icon:'add', url:'./new-cita'},
+  {label:'Calendario y Horario', icon: 'search', url:'./search'},
   {label:'Añadir Usuario', icon: 'add', url:'#'},
   ]
 }

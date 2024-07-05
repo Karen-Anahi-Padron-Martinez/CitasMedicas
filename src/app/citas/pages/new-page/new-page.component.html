@@ -1,1 +1,53 @@
-<p>new-page works!</p>
+<div class="container">
+    <mat-card>
+      <mat-toolbar color="primary">
+        <span>Citas</span>
+      </mat-toolbar>
+  
+      <form>
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre del alumno</mat-label>
+          <input matInput required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Área académica</mat-label>
+          <input matInput required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Grupo</mat-label>
+          <input matInput required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Número de control</mat-label>
+          <input matInput required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha y hora</mat-label>
+          <input matInput [matDatepicker]="picker" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+  
+        <button mat-raised-button color="warn" type="reset">Limpiar</button>
+        <button mat-raised-button color="primary" type="submit">Enviar</button>
+      </form>
+    </mat-card>
+  
+  
+    <mat-card>
+      <mat-calendar></mat-calendar>
+      <p>Si quieres agendar una cita rellena el formulario y da click en "Enviar", el apartado login es exclusivo para el departamento psicopedagógico.</p>
+    </mat-card>
+  
+    <mat-card>
+      <p>Número de teléfono: ********** <mat-icon>whatsapp</mat-icon></p>
+      <p>Correo electrónico: *******utng.edu.mx <mat-icon>email</mat-icon></p>
+    </mat-card>
+  </div>
+  
+
+<router-outlet></router-outlet>

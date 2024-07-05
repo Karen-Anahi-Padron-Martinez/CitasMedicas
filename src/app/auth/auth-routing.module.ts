@@ -5,6 +5,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { PasswordPageComponent } from './pages/password-page/password-page.component';
+import { ListPageComponent } from '../citas/pages/list-page/list-page.component';
 
 
 
@@ -18,6 +19,7 @@ const routes: Routes =[
          {path: 'new-account',component:RegisterPageComponent},
          {path: 'forgot-password',component:PasswordPageComponent},
          {path: '**',redirectTo:'login',pathMatch: 'full'},
+         {path: 'layout',component:ListPageComponent}
 
         ]
     }

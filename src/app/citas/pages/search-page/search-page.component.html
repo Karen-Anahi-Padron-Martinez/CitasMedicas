@@ -1,1 +1,39 @@
-<p>search-page works!</p>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario estudiantes</title>
+  <link rel="stylesheet" href="search-page.component.css">
+</head>
+
+<body>
+  <header>
+    <h1>Psicocitas</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </header>
+  <div class="main-content">
+    
+    <div class="calendar-content">
+      <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+    </div>
+  </div>
+
+  <footer>
+    <span class="date">{{ currentDate }}</span>
+    <div class="email-icons">
+      <div class="email-row">
+        <mat-icon>email</mat-icon> <span>correo1example.com</span>
+        <mat-icon>email</mat-icon> <span>correo2example.com</span>
+      </div>
+      <div class="email-row">
+        <mat-icon>email</mat-icon> <span>correo3example.com</span>
+        <mat-icon>email</mat-icon> <span>correo4example.com</span>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

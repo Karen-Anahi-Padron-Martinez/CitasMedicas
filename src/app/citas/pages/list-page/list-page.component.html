@@ -1,27 +1,74 @@
-<div class="container">
-    <mat-card class="calendar-card">
-      <mat-card-title>Calendario</mat-card-title>
-      <mat-card-content>
-        <mat-form-field>
-          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-      </mat-card-content>
-    </mat-card>
-  
-    <mat-card class="schedule-card">
-      <mat-card-title>Horario</mat-card-title>
-      <mat-card-content>
-        <mat-grid-list cols="5" rowHeight="100px">
-          <mat-grid-tile *ngFor="let day of days" [colspan]="1" [rowspan]="1">
-            <div class="day-header">{{ day }}</div>
-            <div class="time-slot" *ngFor="let time of times[day]">
-              {{ time }}
-            </div>
-          </mat-grid-tile>
-        </mat-grid-list>
-      </mat-card-content>
-    </mat-card>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario estudiantes</title>
+  <link rel="stylesheet" href="list-page.component.css">
+</head>
+
+<body>
+  <header>
+    <h1>Psicocitas</h1>
+      <h1>
+    <button mat-button [routerLink]="['/auth/login']" color="primary" class="btn">Login</button>
+    </h1>
+  </header>
+  <div class="main-content">
+    <div class="form-content">
+      <h2>Completa los campos</h2>
+      <form action="https://formsubmit.co/mijelito333@gmail.com" method="POST">
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" name="nombre" id="nombre">
+
+        <label for="area">Área académica:</label>
+        <input type="text" name="area" id="area">
+
+        <label for="grupo">Grupo:</label>
+        <input type="text" name="grupo" id="grupo">
+
+        <label for="correo">Correo:</label>
+        <input type="email" name="email" id="email">
+
+        <label for="numero">Número de control:</label>
+        <input type="text" name="numero" id="numero">
+
+        <label for="dia">Día:</label>
+        <input type="date" name="dia" id="dia" min="{{ today }}">
+
+        <label for="hora">Hora:</label>
+        <select name="hora" id="hora">
+          <option *ngFor="let time of times" [value]="time">{{ time }}</option>
+        </select>
+
+        <label for="comentario">Descripción:</label>
+        <textarea name="comentario" id="comentario" cols="30" rows="5"></textarea>
+        <input class="btn" type="submit" value="Enviar">
+      </form>
+    </div>
+
+    <div class="calendar-content">
+      <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+      <p class="calendar-text">Si quieres agendar una cita rellena el formulario y da click en "Enviar", el apartado login es exclusivo para el departamento psicopedagógico.</p>
+    </div>
   </div>
-  
+
+  <footer>
+    <span class="date">{{ currentDate }}</span>
+    <div class="email-icons">
+      <div class="email-row">
+        <mat-icon>email</mat-icon> <span>correo1example.com</span>
+        <mat-icon>email</mat-icon> <span>correo2example.com</span>
+      </div>
+      <div class="email-row">
+        <mat-icon>email</mat-icon> <span>correo3example.com</span>
+        <mat-icon>email</mat-icon> <span>correo4example.com</span>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

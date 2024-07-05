@@ -1,7 +1,9 @@
-<mat-sidenav-container fullscreen>
-    <mat-sidenav #sidenav mode="push" [ngStyle]="{width: '250px'}">
-     
-    <mat-toolbar color="warn">
+
+
+<mat-sidenav-container fullscreen style="background-color: #a2e2f8;">
+    <mat-sidenav #sidenav mode="side" [ngStyle]="{width: '250px'}" style="background-color: #9ab1f1; border-radius: 0;">
+      <link rel="stylesheet" href="layout-page.component.css">
+    <mat-toolbar color="primary" style="background-color: hsl(216, 66%, 76%);">
       <span>Menu</span>
       <span class="spacer"></span>
       <button mat-icon-button (click)="sidenav.toggle()">
@@ -27,8 +29,8 @@
     </button>
   
     <span class="spacer"></span>
-    <mat-toolbar color="blue">
-      Departamento Psicopedagógico
+    <mat-toolbar color="primary" class="custom-toolbar">
+      <span class="toolbar-content">Departamento Psicopedagógico</span>
     </mat-toolbar>
   </mat-toolbar>
   

@@ -28,10 +28,10 @@
           </mat-form-field>
           <mat-checkbox id="remember" name="remember">Recuérdame</mat-checkbox>
           <div class="button-container">
-            <button mat-raised-button color="primary" type="submit">Acceder</button>
+            <button mat-button [routerLink]="['/citas/list']" color="primary">Acceder</button>
           </div>
           <div class="links">
-            <button mat-button [routerLink]="['/auth/new-new-account']" color="primary" class="custom-small-button">Registrarse</button>
+            <button mat-button [routerLink]="['/auth/new-account']" color="primary" class="custom-small-button">Registrarse</button>
 
             <span>|</span>
             <button mat-button [routerLink]="['/auth/forgot-password']" color="primary">¿Olvidé mi contraseña?</button>
