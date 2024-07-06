@@ -8,6 +8,12 @@ import { NewPageComponent } from './pages/new-page/new-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { MaterialModule } from '../material/material.module';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
+import { MatSidenavContainer } from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -22,7 +28,14 @@ import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
   imports: [
     CommonModule,
     CitasRoutingModule,
-    MaterialModule
+    MaterialModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatSidenavContainer,
+
+    RouterModule
   ]
 })
 export class CitasModule { }

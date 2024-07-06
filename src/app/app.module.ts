@@ -20,6 +20,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ListPageComponent } from './citas/pages/list-page/list-page.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenu, MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
+import { MatSidenavContainer } from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -36,7 +38,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatButtonModule,
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
@@ -47,6 +48,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatFormFieldModule,
     MatButtonModule,
     MatGridListModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatSidenavContainer,
+    
     
   ],
   providers: [

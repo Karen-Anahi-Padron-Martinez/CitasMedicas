@@ -13,7 +13,7 @@ const routes: Routes = [
     loadChildren: () => import('./citas/citas.module').then(m=> m.CitasModule)
   },
   { path: '',
-    redirectTo: 'auth/login', 
+    redirectTo: 'auth/principal', 
     pathMatch: 'full' 
    },
   {
