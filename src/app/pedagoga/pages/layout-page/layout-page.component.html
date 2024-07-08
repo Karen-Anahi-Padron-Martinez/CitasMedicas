@@ -1,0 +1,48 @@
+<mat-sidenav-container style="background-color: #a2e2f8;">
+    <mat-sidenav #sidenav mode="side" [ngStyle]="{width: '250px'}" style="background-color: #9ab1f1; border-radius: 0;">
+      <link rel="stylesheet" href="layout-page.component.css">
+      <mat-toolbar color="primary" style="background-color: hsl(216, 66%, 76%);">
+        <span>Menu</span>
+        <span class="spacer"></span>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </mat-toolbar>
+      <mat-nav-list>
+        <mat-list-item
+          *ngFor="let item of sidebarItems"
+          [routerLink]="item.url"
+          (click)="sidenav.toggle()">
+          <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+          {{ item.label }}
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="toolbar-content">Pedagogía</span>
+      <span class="spacer"></span>
+      <button mat-icon-button [matMenuTriggerFor]="notificationsMenu">
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <mat-menu #notificationsMenu="matMenu">
+        <button mat-menu-item>Notification 1</button>
+        <button mat-menu-item>Notification 2</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="userMenu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item routerLink="./pedagoga">Profile</button>
+        <button mat-menu-item>Logout</button>
+      </mat-menu>
+    </mat-toolbar>
+  
+    <div >
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-container>
+  

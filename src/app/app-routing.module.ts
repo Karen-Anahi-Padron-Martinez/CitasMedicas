@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'citas',
     loadChildren: () => import('./citas/citas.module').then(m=> m.CitasModule)
   },
+  {
+    path: 'pedagoga',
+    loadChildren: () => import('./pedagoga/pedagoga.module').then(m=> m.PedagogaModule)
+  },
   { path: '',
     redirectTo: 'auth/principal', 
     pathMatch: 'full' 

@@ -1,0 +1,23 @@
+<body>
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Estatus</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let element of history">
+                <td>{{element.nombre}}</td>
+                <td>{{element.estatus}}</td>
+                <td>{{element.fecha}}</td>
+                <td>{{element.hora}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="width: 10%;">
+        <button mat-button [routerLink]="['/pedagoga/pedagoga']" color="primary" class="btn">Volver</button>
+    </div>
+</body>
