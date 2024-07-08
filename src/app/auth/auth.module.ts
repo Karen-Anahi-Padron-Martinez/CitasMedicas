@@ -8,6 +8,10 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { PasswordPageComponent } from './pages/password-page/password-page.component';
 import { PrincipalPageComponent } from './pages/principal-page/principal-page.component';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { CodigoPageComponent } from './pages/codigo-page/codigo-page.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -16,12 +20,17 @@ import { PrincipalPageComponent } from './pages/principal-page/principal-page.co
     LayoutPageComponent,
     LoginPageComponent,
     RegisterPageComponent,
-    PasswordPageComponent
+    PasswordPageComponent,
+    CodigoPageComponent
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
-    MaterialModule
+    MaterialModule,
+    MatInputModule,
+    MatCardModule,
+    FormsModule,
+    
   ]
 })
 export class AuthModule { }

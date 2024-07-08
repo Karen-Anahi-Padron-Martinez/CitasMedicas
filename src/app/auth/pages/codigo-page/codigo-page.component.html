@@ -1,0 +1,16 @@
+
+<link rel="stylesheet" href="codigo-page.component.css">
+<mat-card>
+    <mat-card-title>Ingrese su Código</mat-card-title>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Código</mat-label>
+          <input matInput [(ngModel)]="code" name="code" required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Enviar</button>
+      </form>
+      <p *ngIf="submittedCode">El código ingresado es: {{ submittedCode }}</p>
+    </mat-card-content>
+  </mat-card>
+  

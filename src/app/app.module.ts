@@ -22,8 +22,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenu, MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
 import { MatSidenavContainer } from '@angular/material/sidenav';
-
-
+import { MatTableModule } from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +50,7 @@ import { MatSidenavContainer } from '@angular/material/sidenav';
     MatMenuModule,
     MatButtonModule,
     MatSidenavContainer,
+    MatTableModule
     
     
   ],
