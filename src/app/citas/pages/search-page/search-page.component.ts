@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-
+export interface SearchElement {
+  day: string;
+  startTime: string;
+  endTime: string;
+}
 @Component({
   selector: 'app-search-page',
   templateUrl: './search-page.component.html',
@@ -27,7 +31,22 @@ export class SearchPageComponent {
     }
     return times;
   }
-}  
+  displayedColumns: string[] = ['day', 'startTime', 'endTime'];
+  dataSource: SearchElement[] = [
+    {day: 'Lunes', startTime: '09:00', endTime: '17:00'},
+    {day: 'Martes', startTime: '09:00', endTime: '17:00'},
+    {day: 'Miércoles', startTime: '09:00', endTime: '17:00'},
+    {day: 'Jueves', startTime: '09:00', endTime: '17:00'},
+    {day: 'Viernes', startTime: '09:00', endTime: '17:00'},
+    {day: 'Sábado', startTime: '10:00', endTime: '14:00'},
+    {day: 'Domingo', startTime: '', endTime: ''},
+  ];
+
+  save() {
+    console.log('Horarios guardados', this.dataSource);
+  }
+}
+ 
 
 
 

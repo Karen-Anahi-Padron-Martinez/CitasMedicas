@@ -10,30 +10,59 @@
 </head>
 
 <body>
-  <header>
-    <h1>Psicocitas</h1>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </header>
+  
   <div class="main-content">
-    
-    <div class="calendar-content">
-      <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+    <div class="calendar-and-schedule">
+      <div class="calendar-content">
+        <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+      </div>
+      <div class="schedule-content">
+        <mat-card>
+          <mat-card-title>Horarios de Atención</mat-card-title>
+          <mat-card-content>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <!-- Day Column -->
+              <ng-container matColumnDef="day">
+                <th mat-header-cell *matHeaderCellDef> Día </th>
+                <td mat-cell *matCellDef="let element"> {{element.day}} </td>
+              </ng-container>
+
+              <!-- Start Time Column -->
+              <ng-container matColumnDef="startTime">
+                <th mat-header-cell *matHeaderCellDef> Hora de Inicio </th>
+                <td mat-cell *matCellDef="let element">
+                  <mat-form-field>
+                    <input matInput [(ngModel)]="element.startTime" placeholder="HH:MM">
+                  </mat-form-field>
+                </td>
+              </ng-container>
+
+              <!-- End Time Column -->
+              <ng-container matColumnDef="endTime">
+                <th mat-header-cell *matHeaderCellDef> Hora de Fin </th>
+                <td mat-cell *matCellDef="let element">
+                  <mat-form-field>
+                    <input matInput [(ngModel)]="element.endTime" placeholder="HH:MM">
+                  </mat-form-field>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="save()">Guardar</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
     </div>
   </div>
 
-  <footer>
-    <span class="date">{{ currentDate }}</span>
-    <div class="email-icons">
-      <div class="email-row">
-        <mat-icon>email</mat-icon> <span>correo1example.com</span>
-        <mat-icon>email</mat-icon> <span>correo2example.com</span>
-      </div>
-      <div class="email-row">
-        <mat-icon>email</mat-icon> <span>correo3example.com</span>
-        <mat-icon>email</mat-icon> <span>correo4example.com</span>
-      </div>
-    </div>
-  </footer>
+  
 </body>
 
 </html>
+
+
+
