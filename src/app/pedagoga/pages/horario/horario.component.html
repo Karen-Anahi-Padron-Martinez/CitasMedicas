@@ -1,0 +1,27 @@
+<body>
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>Hora</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miercoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let element of horarios">
+                <td>{{element.hora}}</td>
+                <td>{{element.Lunes}}</td>
+                <td>{{element.Martes}}</td>
+                <td>{{element.Miercoles}}</td>
+                <td>{{element.Jueves}}</td>
+                <td>{{element.Viernes}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="width: 10%;">
+        <button mat-button [routerLink]="['/pedagoga/pedagoga']" color="primary" class="btn">Volver</button>
+    </div>
+</body>

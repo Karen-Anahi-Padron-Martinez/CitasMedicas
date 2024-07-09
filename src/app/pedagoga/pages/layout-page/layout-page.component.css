@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #2710d7; /* Pastel pink background */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ab47bc; /* Pastel purple */
+    color: rgb(18, 161, 245);
+  }
+  
+  .main-content {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    background: linear-gradient(
+      50deg,
+      #b2dfdb 50%, /* Pastel turquoise */
+      #80deea 50%
+    );
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .form-content h2 {
+    color: #6a1b9a; /* Deep pastel purple */
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  label {
+    font-size: 17px;
+    color: #8e24aa; /* Medium pastel purple */
+    align-self: flex-start;
+  }
+  
+  input, textarea, select {
+    padding: 10px;
+    background-color: #f3e5f5; /* Light pastel purple */
+    border: none;
+    font-size: 15px;
+    color: #6a1b9a; /* Deep pastel purple */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  .btn {
+    background-color: #ba68c8; /* Pastel violet */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .btn mat-icon {
+    margin-right: 5px;
+  }
+  
+  
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px 20px;
+    background-color: #ab47bc; /* Pastel purple */
+    color: white;
+  }
+  
+  .email-icons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .email-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .email-row mat-icon {
+    margin-right: 5px;
+  }
+  
+  .date {
+    align-self: flex-end;
+  }
+  span{
+    color:rgb(42, 128, 203);
+  }
+  mat-sidenav-container {
+    color:#80deea;
+  }
+  .custom-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  .toolbar-content {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
