@@ -160,3 +160,6 @@ h1{
 .btn1 mat-icon {
   margin-right: 5px;
 }
+td {
+  color: bisque;
+}

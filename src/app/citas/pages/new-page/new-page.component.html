@@ -1,53 +1,28 @@
-<div class="container">
-    <mat-card>
-      <mat-toolbar color="primary">
-        <span>Citas</span>
-      </mat-toolbar>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Horario escolar</title>
+    <meta charset="utf-8">
+  </head>
+  <body bgcolor="#1C1A1A" text="#EEEB09">
+   <h1 class="title">Horario escolar </h1>
+       <table border=2>
+       <tr>  <td>Hora</td> <td>Lunes</td> <td>Martes</td> <td>Miercoles</td> <td>Jueves</td> <td>Viernes</td> </tr>
+       <tr>  <td>08:00, 16:00</td><td>Libre</td> <td>Libre</td> <td>Ocupado</td> <td>Libre</td> <td>Libre</td> </tr>
+       <tr>  <td>08:00, 16:00</td><td>Libre</td> <td>Libre</td> <td>Libre</td> <td>Ocupado</td> <td>Libre</td> </tr>
+       <tr>  <td>08:00, 16:00</td><td>Libre</td> <td>Ocupado</td> <td>Libre</td> <td>Libre</td> <td>Libre</td> </tr>
+       <tr>  <td>08:00, 16:00</td><td>Libre</td> <td>Libre</td> <td>Libre</td> <td>Ocupado</td> <td>Libre</td> </tr>
+       <tr>  <td>08:00, 16:00</td><td>Receso</td> <td>Receso</td> <td>Receso</td> <td>Receso</td> <td>Receso</td> </tr>
+       <tr>  <td>08:00, 16:00</td><td>Ocupado</td> <td>Libre</td> <td>Libre</td> <td>Libre</td> <td>Libre</td> </tr>
+       <tr>  <td>08:00, 16:00</td><td>Libre</td> <td>Ocupado</td> <td>Libre</td> <td>Libre</td> <td>Libre</td> </tr>
+       <tr>  <td>08:00, 16:00</td><td>Libre</td> <td>Libre</td> <td>Ocupado</td> <td>Ocupado</td> <td>Ocupado</td> </tr>
+     </table>
+  </body>
+</html>
+<div>
+<div class="calendar-content">
+  <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+  <p class="calendar-text">Si quieres agendar una cita rellena el formulario y da click en "Enviar", el apartado login es exclusivo para el departamento psicopedagógico.</p>
   
-      <form>
-        <mat-form-field appearance="fill">
-          <mat-label>Nombre del alumno</mat-label>
-          <input matInput required>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Área académica</mat-label>
-          <input matInput required>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Grupo</mat-label>
-          <input matInput required>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Número de control</mat-label>
-          <input matInput required>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Fecha y hora</mat-label>
-          <input matInput [matDatepicker]="picker" required>
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-  
-        <button mat-raised-button color="warn" type="reset">Limpiar</button>
-        <button mat-raised-button color="primary" type="submit">Enviar</button>
-      </form>
-    </mat-card>
-  
-  
-    <mat-card>
-      <mat-calendar></mat-calendar>
-      <p>Si quieres agendar una cita rellena el formulario y da click en "Enviar", el apartado login es exclusivo para el departamento psicopedagógico.</p>
-    </mat-card>
-  
-    <mat-card>
-      <p>Número de teléfono: ********** <mat-icon>whatsapp</mat-icon></p>
-      <p>Correo electrónico: *******utng.edu.mx <mat-icon>email</mat-icon></p>
-    </mat-card>
-  </div>
-  
-
-<router-outlet></router-outlet>
+</div>
+</div>
