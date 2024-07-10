@@ -44,12 +44,14 @@
         <label for="comentario">Descripción:</label>
         <textarea name="comentario" id="comentario" cols="30" rows="5"></textarea>
         <input class="btn" type="submit" value="Enviar">
+        <input class="btn" type="reset" value="Limpiar">
       </form>
     </div>
 
     <div class="calendar-content">
       <mat-calendar [(selected)]="selectedDate"></mat-calendar>
       <p class="calendar-text">Si quieres agendar una cita rellena el formulario y da click en "Enviar", el apartado login es exclusivo para el departamento psicopedagógico.</p>
+      
     </div>
   </div>
 

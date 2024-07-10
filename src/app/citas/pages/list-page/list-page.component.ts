@@ -1,10 +1,9 @@
-// list-page.component.ts
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-list-page',
+  selector: 'ListPageComponent',
   templateUrl: './list-page.component.html',
-  styleUrls: ['./list-page.component.css']  // Asegúrate de que la ruta del archivo CSS sea correcta
+  styleUrls: ['./list-page.component.css']
 })
 export class ListPageComponent implements OnInit {
   title = 'form';
@@ -28,12 +27,4 @@ export class ListPageComponent implements OnInit {
     }
     return times;
   }
-}  
-
-
-
-
-
-
-
-
+}
