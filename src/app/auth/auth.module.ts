@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { CodigoPageComponent } from './pages/codigo-page/codigo-page.component';
 import { MatCardModule } from '@angular/material/card';
+import { ResetPageComponent } from './pages/reset-page/reset-page.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MatCardModule } from '@angular/material/card';
     LoginPageComponent,
     RegisterPageComponent,
     PasswordPageComponent,
-    CodigoPageComponent
+    CodigoPageComponent,
+    ResetPageComponent
   ],
   imports: [
     CommonModule,

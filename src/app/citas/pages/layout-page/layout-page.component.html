@@ -22,7 +22,7 @@
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <span class="toolbar-content">Departamento Psicopedagógico</span>
+    <span class="toolbar-content">Psicología</span>
     <span class="spacer"></span>
     <button mat-icon-button [matMenuTriggerFor]="notificationsMenu">
       <mat-icon>notifications</mat-icon>
@@ -35,8 +35,8 @@
       <mat-icon>account_circle</mat-icon>
     </button>
     <mat-menu #userMenu="matMenu">
-      <button mat-menu-item>Profile</button>
-      <button mat-menu-item>Logout</button>
+      <button mat-menu-item routerLink="/citas/perfil">Perfil</button>
+      <button mat-menu-item routerLink="/auth/principal">Cerrar Sesion</button>
     </mat-menu>
   </mat-toolbar>
 
