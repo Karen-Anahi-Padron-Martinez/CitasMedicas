@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="reset-page.component.css">
+<div class="reset-password-container">
+    <mat-card>
+      <mat-card-title>Reestablecer contraseña</mat-card-title>
+      <mat-card-content>
+        <form>
+          <mat-form-field class="full-width">
+            <mat-label>Ingresa una contraseña:</mat-label>
+            <input matInput type="password" required>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Confirma contraseña:</mat-label>
+            <input matInput type="password" required>
+          </mat-form-field>
+          <div class="button-container">
+            <button mat-raised-button routerLink="/auth/login">Reestablecer</button>
+          </div>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button routerLink="/auth/codigo">Regresar</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

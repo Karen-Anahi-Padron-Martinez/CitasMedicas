@@ -5,6 +5,7 @@ import { NewPageComponent } from './pages/new-page/new-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { CitaPageComponent } from './pages/cita-page/cita-page.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
+import { PagePsicologaComponent } from './pages/page-psicologa/page-psicologa.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
       {path: 'edit/:id',component: NewPageComponent},
       {path:'list',component: ListPageComponent},
       {path: ':id',component: CitaPageComponent},
+      {path :'perfil',component:PagePsicologaComponent },
       {path: '**',redirectTo: 'List'}
 
 

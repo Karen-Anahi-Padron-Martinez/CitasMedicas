@@ -8,6 +8,7 @@ import { PasswordPageComponent } from './pages/password-page/password-page.compo
 import { PrincipalPageComponent } from './pages/principal-page/principal-page.component';
 import { ListPageComponent } from '../citas/pages/list-page/list-page.component';
 import { CodigoPageComponent } from './pages/codigo-page/codigo-page.component';
+import { ResetPageComponent } from './pages/reset-page/reset-page.component';
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes =[
          {path: 'new-account',component:RegisterPageComponent},
          {path: 'forgot-password',component:PasswordPageComponent},
          {path:'codigo',component:CodigoPageComponent},
+         {path:'confirmar',component:ResetPageComponent},
          {path: '**',redirectTo:'login',pathMatch: 'full'},
          
 
