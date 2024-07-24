@@ -64,7 +64,7 @@ mat-checkbox {
 }
 
 button {
-  width: 100%;
+  width: 30%;
 }
 
 .links {
@@ -98,6 +98,12 @@ button {
   height: 24px; /* Altura personalizada */
   line-height: 24px; /* Alineación vertical del texto */
 }
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
 
 
 

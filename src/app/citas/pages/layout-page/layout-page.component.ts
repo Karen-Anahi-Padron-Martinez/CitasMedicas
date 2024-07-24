@@ -11,6 +11,6 @@ export class LayoutPageComponent {
     {label:'Citas',icon:'label', url:'./list'},
     {label:'Historial del citas',icon:'manage_search', url:'./new-cita'},
     {label:'Horario', icon: 'schedule', url:'./search'},
-    {label:'Añadir Usuario', icon: 'person_add', url:'#'},
+    {label:'Añadir Usuario', icon: 'person_add', url:'./agregar'},
   ]
 }

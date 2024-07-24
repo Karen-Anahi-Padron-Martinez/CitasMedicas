@@ -9,10 +9,11 @@ import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { PasswordPageComponent } from './pages/password-page/password-page.component';
 import { PrincipalPageComponent } from './pages/principal-page/principal-page.component';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CodigoPageComponent } from './pages/codigo-page/codigo-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { ResetPageComponent } from './pages/reset-page/reset-page.component';
+
 
 
 @NgModule({
@@ -32,6 +33,8 @@ import { ResetPageComponent } from './pages/reset-page/reset-page.component';
     MatInputModule,
     MatCardModule,
     FormsModule,
+    ReactiveFormsModule,
+   
     
   ]
 })
