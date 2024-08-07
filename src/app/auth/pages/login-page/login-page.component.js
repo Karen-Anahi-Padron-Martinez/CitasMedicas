@@ -1,5 +1,5 @@
 document.getElementById('loginForm').addEventListener('submit', function(event) {
-  var username = document.getElementById('username').value;
+  var username = document.getElementById('email').value;
   var password = document.getElementById('password').value;
 
   // Limpiar mensajes de error anteriores
@@ -9,10 +9,10 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
   // Validar nombre de usuario o correo electrónico
   if (!username) {
-    showError('username', 'Por favor, introduce tu nombre de usuario o correo electrónico.');
+    showError('email', 'Por favor, introduce tu nombre de usuario o correo electrónico.');
     valid = false;
   } else if (!validateEmail(username) && !validateUsername(username)) {
-    showError('username', 'Por favor, introduce un nombre de usuario o correo electrónico válido.');
+    showError('email', 'Por favor, introduce un nombre de usuario o correo electrónico válido.');
     valid = false;
   }
 

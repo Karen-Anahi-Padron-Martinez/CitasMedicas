@@ -20,9 +20,9 @@
           </div>
           <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
-            <input matInput type="text" formControlName="username">
-            <mat-error *ngIf="loginForm.get('username')!.hasError('required')">El email es obligatorio</mat-error>
-            <mat-error *ngIf="loginForm.get('username')!.hasError('email')">Debe ser un email válido</mat-error>
+            <input matInput type="text" formControlName="email">
+            <mat-error *ngIf="loginForm.get('email')!.hasError('required')">El email es obligatorio</mat-error>
+            <mat-error *ngIf="loginForm.get('email')!.hasError('email')">Debe ser un email válido</mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
@@ -37,7 +37,7 @@
           <div class="links">
             <button mat-button [routerLink]="['/auth/new-account']" color="primary" class="custom-small-button">Registrarse</button>
             <span>|</span>
-            <button mat-button [routerLink]="['/auth/forgot-password']" color="primary"class="custom-small-button">¿Olvidé mi contraseña?</button>
+            <button mat-button [disabled]="loginForm.invalid"color="primary"class="custom-small-button">¿Olvidé mi contraseña?</button>
           </div>
         </form>
       </main>
