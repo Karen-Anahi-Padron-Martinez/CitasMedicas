@@ -26,6 +26,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { MatCalendar } from '@angular/material/datepicker'; // Ensure this is correct or adjust based on your structure
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { MatCalendar } from '@angular/material/datepicker'; // Ensure this is co
     MatGridListModule,
     MatMenuModule,
     MatSidenavModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()

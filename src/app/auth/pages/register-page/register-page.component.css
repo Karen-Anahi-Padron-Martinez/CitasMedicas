@@ -2,10 +2,10 @@ body {
     font-family: Roboto, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
+    /*display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh;*/
     background-color: #599ced;
   }
   
