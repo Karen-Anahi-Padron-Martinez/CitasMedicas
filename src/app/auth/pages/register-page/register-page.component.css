@@ -1,48 +1,106 @@
+/* register-page.component.css */
+
+/* General Styles */
 body {
-    font-family: Roboto, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    /*display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;*/
-    background-color: #599ced;
-  }
-  
-  .container {
-    max-width: 600px;
-    width: 100%;
-  }
-  
-  mat-card {
-    padding: 16px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  mat-form-field {
-    width: 100%;
-  }
-  
-  button {
-    width: 100%;
-  }
-  
-  .name-fields, .password-fields {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 16px;
-  }
-  
-  .confirmation-buttons {
-    display: flex;
-    justify-content: space-between;
-  }
-  .small-button {
-    font-size: 12px;
-    padding: 5px 10px;
-  }
-  
-  
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  margin: 10vh;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e3f2fd; /* Light blue background */
+}
+
+mat-card {
+  max-width: 500px;
+  height: 90vh;
+  width: 100%;
+  padding: 24px;
+  background-color: #ffffff; /* White background */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #1976d2; /* Primary color */
+  text-align: center;
+}
+h6 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: hsl(180, 4%, 5%); /* Primary color */
+  text-align: center;
+}
+th{
+  color:hsl(180, 4%, 5%);
+}
+
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-form-field.mat-form-field {
+  margin-bottom: 16px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #1976d2; /* Primary color for borders */
+}
+
+.mat-form-field-label {
+  color: #1976d2 !important; /* Primary color for labels */
+}
+
+.mat-select-arrow {
+  color: #1976d2; /* Primary color for dropdown arrow */
+}
+
+.mat-error {
+  font-size: 12px;
+  color: #d32f2f; /* Error color */
+}
+
+/* Buttons */
+button[mat-button] {
+  background-color: #1976d2; /* Primary color */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button[mat-button]:hover {
+  background-color: #1565c0; /* Darker shade on hover */
+}
+
+button[mat-button][disabled] {
+  background-color: #cfd8dc; /* Light grey for disabled state */
+  color: #90a4ae; /* Text color for disabled state */
+}
+
+button[mat-button]:not(:last-child) {
+  margin-right: 8px;
+}
+
+/* Form Field Grouping */
+.name-fields,
+.password-fields {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* Input Fields */
+input[matInput] {
+  border-radius: 5px;
+  padding: 10px;
+  border: 1
+}

@@ -1,33 +1,49 @@
-body{
+
+.container {
   display: flex;
-  flex-direction: row;
-  gap: 20px;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
+  margin: 110px ;        /* Ajusta el margen según sea necesario */
+  padding: 80px;            /* Aumenta el padding para más espacio interno */
+  max-width: 1600px;        /* Aumenta el max-width para hacer el contenedor más grande */
+  width: 100%;              /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
+  box-sizing: border-box;  /* Incluye padding y border en el cálculo del width */
 }
-mat-card{
-display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.container{
-width: 30%;
-}
+
+
 .calendar {
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
-align-items: center;
-width: 50%;
-border: 1px solid black;
-border-radius: 5px;
-background-color: #c791ce; /* Color de fondo */
-padding: 10px; /* Espaciado interno */
+  flex: 1;
+  margin-right: 80px;
 }
 
+.info-card {
+  flex: 1;
+  margin-left: 20px;
+}
 
-.calendar mat-calendar {
-  width: 80%;
-  height: 80%;
+mat-calendar {
+  width: 100%;      /* Asegúrate de que el calendario ocupe todo el ancho del contenedor */
+  max-width: 800px; /* Aumenta el max-width para hacerlo más grande */
+  height: auto;     /* Ajusta la altura automáticamente para mantener la proporción */
+}
+
+mat-card {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.profile-img {
+  width: 10%;
+  height: auto;
+  border-radius: 5%;
+  margin-bottom: 10px;
+}
+
+.info-text {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
 }

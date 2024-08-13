@@ -1,10 +1,13 @@
 
 body {
-  background: linear-gradient(to right, rgb(140, 140, 199), rgb(49, 159, 213)); /* Fondo degradado de rojo a amarillo */
+  background: linear-gradient(to right, rgb(140, 140, 199), rgb(49, 159, 213)); 
 }
 
   .spacer{
     flex: 1 1 auto;
   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

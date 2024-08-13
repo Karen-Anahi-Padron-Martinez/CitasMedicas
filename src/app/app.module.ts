@@ -55,7 +55,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatMenuModule,
     MatSidenavModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [
     provideAnimationsAsync()

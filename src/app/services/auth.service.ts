@@ -25,4 +25,13 @@ export class AuthService {
     deletePsicopedagogia(id: number): Observable<any> {
       return this.http.delete(`${this.baseUrl}/delete_psicopedagogia/${id}`);
     }
+    // Método para obtener el perfil por ID
+    //getPerfil(id: number): Observable<any> {
+      //return this.http.get<any>(`${this.baseUrl}/${id}`);
+   // }
+    getRegistros(): Observable<any[]> { // Usa 'any[]' en lugar de 'Psicopedagogia[]'
+      return this.http.get<any[]>(`${this.baseUrl}/psicopedagogia`);
+    }
 }
+
+
