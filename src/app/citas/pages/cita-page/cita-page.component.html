@@ -1,18 +1,17 @@
-<body>
-  <div style="width: 20%;">
 
-  </div>
-  
-  <div class="calendar"> 
-      <mat-calendar style="height: 80%;"></mat-calendar>
-  </div>
-  <div class="container">
-      <mat-card>
-          <img [src]="psicologa.img" width="30%" alt="">
-          <br>
-          <div>Nombre: {{psicologa.nombre}}</div>
+<div class="container">
+    <div class="calendar">
+        <mat-calendar></mat-calendar>
+    </div>
+    <div class="info-card">
+        <mat-card>
+            <img [src]="psicloga.img" class="profile-img" alt="">
+            
+            <div class="info-text">Nombre: {{psicologa.NombreP}}</div>
+            <div class="info-text">Apellido: {{psicologa.ApellidoP}}</div>
+            <div class="info-text">Puesto: {{psicologa.Puesto}}</div>
+            <div class="info-text">Email: {{psicologa.EmailP}}</div>
+        </mat-card>
+    </div>
+</div>
 
-      </mat-card>
-  </div>
-  
-</body>

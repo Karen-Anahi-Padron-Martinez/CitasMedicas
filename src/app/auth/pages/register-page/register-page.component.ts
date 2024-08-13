@@ -1,3 +1,4 @@
+// src/app/components/register-page/register-page.component.ts
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
@@ -10,8 +11,14 @@ import { Router } from '@angular/router';
 })
 export class RegisterPageComponent implements OnInit {
   registerForm!: FormGroup;
+  registros: any[] = []; // Usa 'any[]' en lugar de 'Psicopedagogia[]'
+  displayedColumns: string[] = ['IdPsico', 'NombreP', 'ApellidoP', 'Puesto', 'EmailP', 'Contraseña'];
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
     this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       firstname: ['', Validators.required],
@@ -22,7 +29,9 @@ export class RegisterPageComponent implements OnInit {
     }, { validators: this.passwordMatchValidator });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadRegistros();
+  }
 
   passwordMatchValidator(form: FormGroup) {
     return form.get('password')!.value === form.get('confirm_password')!.value ? null : { mismatch: true };
@@ -34,7 +43,7 @@ export class RegisterPageComponent implements OnInit {
         response => {
           if (response.message === 'Usuario registrado exitosamente') {
             alert('Registro exitoso');
-            this.router.navigate(['/auth/new-new-account']);// Redirigir al usuario a otra página o mostrar un mensaje de éxito
+            this.router.navigate(['/auth/new-new-account']);
           } else {
             alert(response.message);
           }
@@ -48,6 +57,7 @@ export class RegisterPageComponent implements OnInit {
       alert('Por favor, complete todos los campos correctamente.');
     }
   }
+
   update(id: string, nombre: string, apellido: string, puesto: string, email: string, password: string) {
     const numericId = Number(id);
     if (isNaN(numericId)) {
@@ -63,8 +73,10 @@ export class RegisterPageComponent implements OnInit {
     };
     this.authService.updatePsicopedagogia(numericId, data).subscribe(response => {
       console.log('Registro actualizado:', response);
+      this.loadRegistros(); // Actualizar registros después de la actualización
     });
   }
+
   delete(id: string) {
     const numericId = Number(id);
     if (isNaN(numericId)) {
@@ -73,6 +85,15 @@ export class RegisterPageComponent implements OnInit {
     }
     this.authService.deletePsicopedagogia(numericId).subscribe(response => {
       console.log('Registro eliminado:', response);
+      this.loadRegistros(); // Actualizar registros después de la eliminación
+    });
+  }
+
+  private loadRegistros(): void {
+    this.authService.getRegistros().subscribe((data: any[]) => { // Usa 'any[]'
+      this.registros = data;
+      
     });
   }
 }
+
