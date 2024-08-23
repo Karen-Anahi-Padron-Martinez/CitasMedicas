@@ -1,0 +1,87 @@
+/* Resetea márgenes y rellenos, y establece el modelo de caja */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo general del formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px; /* Ajusta el ancho máximo del formulario */
+  margin: 20px auto; /* Centra el formulario en la página */
+  padding: 20px;
+  border-radius: 15px;
+  background: linear-gradient(
+    50deg,
+    #07dccb 50%, /* Pastel turquoise */
+    #7fcad4 50%
+  );
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para las etiquetas */
+label {
+  font-size: 17px;
+  color: #d975d1; /* Medium pastel purple */
+  margin-bottom: 5px;
+}
+
+/* Estilo para los campos de entrada, textarea y select */
+input, select {
+  padding: 10px;
+  background-color: #cdf3f3; /* Light pastel turquoise */
+  border: 1px solid #7fcad4; /* Border color similar to background */
+  font-size: 15px;
+  color: #000000; /* Deep pastel purple */
+  margin-bottom: 20px;
+  border-radius: 10px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+  border-color: #5496ff; /* Pastel violet for focus effect */
+  outline: none;
+}
+
+/* Estilo para el botón de enviar */
+button {
+  background-color: #5496ff; /* Pastel violet */
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4182c6; /* Slightly darker violet for hover effect */
+}
+
+/* Opcional: añadir margen superior al formulario para separación */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajusta el alto para centrar verticalmente */
+}
+text{
+    color: darkgoldenrod;
+    justify-content: center;
+    align-items: center;
+}
+mat-icon{
+    background-color: #5496ff; /* Pastel violet */
+  color: rgb(16, 29, 216);
+  padding: 5px;
+  border: none;
+  border-radius: 1px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

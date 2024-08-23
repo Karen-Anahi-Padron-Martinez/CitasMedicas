@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -13,61 +12,91 @@
 <body>
   <header>
     <h1>Psicocitas</h1>
+    <button mat-button [routerLink]="['/auth/login']" color="primary" class="btn">Login</button>
   </header>
+
   <div class="main-content">
     <div class="form-content">
       <h2>Completa los campos</h2>
-      <form action="https://formsubmit.co/mijelito333@gmail.com" method="POST">
+      <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
         <label for="nombre">Nombre Completo:</label>
-        <input type="text" name="nombre" id="nombre">
+        <input type="text" id="nombre" formControlName="nombre" required>
+        <div *ngIf="studentForm.get('nombre')?.invalid && studentForm.get('nombre')?.touched">
+          <span *ngIf="studentForm.get('nombre')?.hasError('required')">El nombre es obligatorio.</span>
+        </div>
 
         <label for="area">Área académica:</label>
-        <input type="text" name="area" id="area">
+        <select id="area" formControlName="area" required>
+          <option value="Administración Capital Humano">Administración Capital Humano</option>
+          <option value="Mercadotecnia">Mercadotecnia</option>
+          <option value="Contaduría">Contaduría</option>
+          <option value="Turismo">Turismo</option>
+          <option value="Desarrollo de Software">Desarrollo de Software</option>
+          <option value="Redes Digitales">Redes Digitales</option>
+          <option value="Entornos Virtuales">Entornos Virtuales</option>
+          <option value="Diseño Digital">Diseño Digital</option>
+          <option value="Mecatronica">Mecatrónica</option>
+          <option value="Procesos Industriales">Procesos Industriales</option>
+          <option value="Energías Renovables">Energías Renovables</option>
+        </select>
+        <div *ngIf="studentForm.get('area')?.invalid && studentForm.get('area')?.touched">
+          <span *ngIf="studentForm.get('area')?.hasError('required')">El área académica es obligatoria.</span>
+        </div>
 
         <label for="grupo">Grupo:</label>
-        <input type="text" name="grupo" id="grupo">
+        <input type="text" id="grupo" formControlName="grupo" required>
+        <div *ngIf="studentForm.get('grupo')?.invalid && studentForm.get('grupo')?.touched">
+          <span *ngIf="studentForm.get('grupo')?.hasError('required')">El grupo es obligatorio.</span>
+        </div>
 
-        <label for="correo">Correo:</label>
-        <input type="email" name="email" id="email">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" required>
+          <mat-error *ngIf="studentForm.get('email')?.invalid && studentForm.get('email')?.touched">
+            <span *ngIf="studentForm.get('email')?.hasError('required')">El email es obligatorio.</span>
+            <span *ngIf="studentForm.get('email')?.hasError('email')">Debe ser un email válido.</span>
+          </mat-error>
+        </mat-form-field>
 
         <label for="numero">Número de control:</label>
-        <input type="text" name="numero" id="numero">
+        <input type="number" id="numero" formControlName="numero" required>
+        <div *ngIf="studentForm.get('numero')?.invalid && studentForm.get('numero')?.touched">
+          <span *ngIf="studentForm.get('numero')?.hasError('required')">El número de control es obligatorio.</span>
+        </div>
 
-        <label for="dia">Día:</label>
-        <input type="date" name="dia" id="dia" min="{{ today }}">
-
-        <label for="hora">Hora:</label>
-        <select name="hora" id="hora">
-          <option *ngFor="let time of times" [value]="time">{{ time }}</option>
-        </select>
-
-        <label for="comentario">Descripción:</label>
-        <textarea name="comentario" id="comentario" cols="30" rows="5"></textarea>
-        <input class="btn" type="submit" value="Enviar">
-        <input class="btn" type="reset" value="Limpiar">
+        <button type="submit">Guardar</button>
       </form>
     </div>
 
-    <div class="calendar-content">
-      <mat-calendar [(selected)]="selectedDate"></mat-calendar>
-      <p class="calendar-text">Si quieres agendar una cita rellena el formulario y da click en "Enviar", el apartado login es exclusivo para el departamento psicopedagógico.</p>
-      
+    <div class="table-content">
+      <h2>Estudiantes registrados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Área</th>
+            <th>Grupo</th>
+            <th>Email</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let estudiante of estudiantes">
+            <td>{{ estudiante.IdUsuario }}</td>
+            <td>{{ estudiante.nombre }}</td>
+            <td>{{ estudiante.area }}</td>
+            <td>{{ estudiante.grupo }}</td>
+            <td>{{ estudiante.email }}</td>
+            <td>
+              <button (click)="onEdit(estudiante.IdUsuario)">Editar</button>
+              <button (click)="onDelete(estudiante.IdUsuario)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-
-  <footer>
-    <span class="date">{{ currentDate }}</span>
-    <div class="email-icons">
-      <div class="email-row">
-        <mat-icon>email</mat-icon> <span>correo1example.com</span>
-        <mat-icon>email</mat-icon> <span>correo2example.com</span>
-      </div>
-      <div class="email-row">
-        <mat-icon>email</mat-icon> <span>correo3example.com</span>
-        <mat-icon>email</mat-icon> <span>correo4example.com</span>
-      </div>
-    </div>
-  </footer>
 </body>
 
-</html>
+</html>-->

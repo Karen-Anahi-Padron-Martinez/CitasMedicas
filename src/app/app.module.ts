@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,10 +28,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { MatCalendar } from '@angular/material/datepicker'; // Ensure this is correct or adjust based on your structure
 import { HttpClientModule } from '@angular/common/http';
+import { CitaComponent } from './pages/cita/cita.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CitaComponent
   ],
   imports: [
     BrowserModule,
