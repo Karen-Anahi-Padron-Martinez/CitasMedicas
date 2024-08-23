@@ -1,24 +1,33 @@
-<!DOCTYPE html>
-<html>
-  <head>
-
-    <title>Horario escolar</title>
-    <meta charset="utf-8">
-  </head>
-  <body bgcolor="#1C1A1A" text="#EEEB09">
-    <h1 class="title">Horario escolar </h1>
-<div>
-<div class="calendar-content">
-  <mat-calendar [(selected)]="selectedDate"></mat-calendar>
- 
+<div class="main-content">
+  <div class="cont12">
+    <h3>Detalles de las Citas</h3>
+    <div class="row">
+      <div class="column" *ngFor="let cita of citas">
+        <div class="data-group">
+          <label>ID Cita</label>
+          <p>{{ cita.IdCita }}</p>
+        </div>
+        <div class="data-group">
+          <label>Nombre Psicólogo</label>
+          <p>{{ cita.NombreP }}</p>
+        </div>
+        <div class="data-group">
+          <label>Apellido Psicólogo</label>
+          <p>{{ cita.ApellidoP }}</p>
+        </div>
+        <div class="data-group">
+          <label>Nombre Estudiante</label>
+          <p>{{ cita.Nombre }}</p>
+        </div>
+        <div class="data-group">
+          <label>Hora de la Cita</label>
+          <p>{{ cita.HoraC }}</p>
+        </div>
+        <div class="data-group">
+          <label>Fecha de la Cita</label>
+          <p>{{ cita.FechaCita }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</body>
-<footer>
-  <footer>
-    <p class="calendar-text">Si quieres agendar una cita rellena el formulario y da click en "Enviar", el apartado login es exclusivo para el departamento psicopedagógico.</p>
-  
-  </footer>
-</footer>
-   
-</html>

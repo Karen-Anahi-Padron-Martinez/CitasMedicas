@@ -1,0 +1,22 @@
+<form [formGroup]="citaForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="psico">Tipo de atención:</label>
+    <select id="psico" formControlName="IdPsico" required>
+      <option *ngFor="let psicologo of psicologos" [value]="psicologo.IdPsico">
+        {{ psicologo.NombreP }}
+      </option>
+    </select>
+  </div>
+
+  <div>
+    <label for="FechaCita">Fecha de Cita</label>
+    <input id="FechaCita" type="date" formControlName="FechaCita" required>
+  </div>
+
+  <div>
+    <label for="HoraC">Hora de Cita</label>
+    <input id="HoraC" type="time" formControlName="HoraC" required>
+  </div>
+
+  <button type="submit">Crear Cita</button>
+</form>

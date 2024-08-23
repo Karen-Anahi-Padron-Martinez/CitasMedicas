@@ -33,7 +33,7 @@ import { ResetPageComponent } from './pages/reset-page/reset-page.component';
     MatInputModule,
     MatCardModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
    
     
   ]

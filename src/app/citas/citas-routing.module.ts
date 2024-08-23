@@ -14,6 +14,7 @@ const routes: Routes = [
     component: LayoutPageComponent,
     children:[
       {path:'new-cita', component:NewPageComponent},
+      {path:'new-cita/:IdPsico', component:NewPageComponent},
       {path: 'search',component:SearchPageComponent},
       {path: 'agregar',component: RegisterPageComponent},
       {path:'list',component: ListPageComponent},

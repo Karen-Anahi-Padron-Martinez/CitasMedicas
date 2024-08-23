@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,7 +9,8 @@ body {
   background-color: #bf2558; /* Pastel pink background */
   display: flex;
   flex-direction: column;
-  height: 130pv;
+  height: 100vh;
+  overflow: hidden; /* Evita el scroll del body */
 }
 
 header {
@@ -23,7 +24,8 @@ header {
 
 .main-content {
   display: flex;
-  flex: 1;
+  justify-content: center;
+  align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
   padding: 20px;
   background: linear-gradient(
     50deg,
@@ -32,134 +34,63 @@ header {
   );
   border-radius: 25px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Evita el scroll del main-content */
+  height: calc(100vh - 60px); /* Asegura que la altura se ajuste al tamaño de la pantalla menos el header */
 }
 
-.form-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+.cont12 {
+  width: 90%;
+  max-width: 1200px;
+  max-height: 100%; /* Asegura que el contenedor no exceda la altura disponible */
   padding: 20px;
+  background-color: #ffffff; /* Fondo blanco para el contenedor */
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  overflow-y: auto; /* Habilita el scroll vertical */
 }
 
-.form-content h2 {
-  color: #7e2aac; /* Deep pastel purple */
-  font-size: 40px;
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-label {
-  font-size: 17px;
-  color: #d975d1; /* Medium pastel purple */
-  align-self: flex-start;
-}
-
-input, textarea, select {
-  padding: 10px;
-  background-color: #cdf3f3; /* Light pastel purple */
-  border: none;
-  font-size: 15px;
-  color: #000000; /* Deep pastel purple */
-  margin-bottom: 20px;
-  border-radius: 10px;
-  width: 100%;
-}
-
-.btn {
-  background-color: #4c8ef8; /* Pastel violet */
-  color: rgb(255, 255, 255);
-  padding: 10px;
-  border: none;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.btn mat-icon {
-  margin-right: 5px;
-}
-
-.calendar-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 20px;
-}
-
-.calendar-content mat-calendar {
-  width: 50%;
-  height: 500px;
-}
-
-.calendar-text {
-  margin-top: 20px;
-  color: #7192db; /* Deep pastel purple */
+h3 {
   text-align: center;
-  width: 100%;
+  color: #7e2aac; /* Deep pastel purple */
+  margin-bottom: 20px;
+  font-size: 24px;
 }
 
-footer {
+.row {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 10px 20px;
-  background-color: #7192db; /* Pastel purple */
-  color: rgb(99, 167, 231);
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 0;
 }
 
-.email-icons {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+.column {
+  flex: 1 1 30%; /* Flexible column width with a minimum of 30% */
+  min-width: 250px; /* Minimum width to ensure readability */
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f0f8ff; /* Alice blue para las columnas */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  box-sizing: border-box;
+  margin: 10px; /* Añade un margen entre las columnas para evitar el desbordamiento */
 }
 
-.email-row {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
+.data-group {
+  margin-bottom: 20px;
 }
 
-.email-row mat-icon {
-  margin-right: 5px;
+.data-group label {
+  font-weight: 600;
+  color: #d975d1; /* Medium pastel purple */
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
 }
 
-.date {
-  align-self: flex-end;
-}
-button{
-  color:aqua;
-  width: 200px;
-  height: 50px;
-}
-h1{
-  color: aliceblue;
-}
-.btn1 {
-  background-color: #4cd80b; /* Pastel violet */
-  color: rgb(255, 255, 255);
-  padding: 10px;
-  border: none;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-.btn1 mat-icon {
-  margin-right: 5px;
-}
-td {
-  color: bisque;
+.data-group p {
+  padding: 8px;
+  background-color: #cdf3f3; /* Light pastel turquoise */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #444;
 }
