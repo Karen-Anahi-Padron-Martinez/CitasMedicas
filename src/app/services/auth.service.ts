@@ -1,4 +1,3 @@
-// src/app/services/auth.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -24,14 +23,23 @@ export class AuthService {
   
     deletePsicopedagogia(id: number): Observable<any> {
       return this.http.delete(`${this.baseUrl}/delete_psicopedagogia/${id}`);
+ 
     }
-    // Método para obtener el perfil por ID
-    //getPerfil(id: number): Observable<any> {
-      //return this.http.get<any>(`${this.baseUrl}/${id}`);
-   // }
-    getRegistros(): Observable<any[]> { // Usa 'any[]' en lugar de 'Psicopedagogia[]'
-      return this.http.get<any[]>(`${this.baseUrl}/psicopedagogia`);
-    }
+    // src/app/services/auth.service.ts
+saveUserData(response: any): void {
+  localStorage.setItem('userId', response.userId); // Asegúrate de que `response.userId` es el campo correcto
+  localStorage.setItem('authToken', response.token); // Si es necesario
+}
+
+// Obtener todos los registros
+getPsicopedagogia(): Observable<any> {
+  return this.http.get(`${this.baseUrl}`);
+}
+
+// Obtener un registro por ID
+getPsicopedagogiaById(id: number): Observable<any> {
+  return this.http.get(`${this.baseUrl}/${id}`);
 }
 
 
+}

@@ -27,10 +27,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { MatCalendar } from '@angular/material/datepicker'; // Ensure this is correct or adjust based on your structure
 import { HttpClientModule } from '@angular/common/http';
+import { UpdateComponent } from './citas/pages/update/update.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+   
+    
   ],
   imports: [
     BrowserModule,

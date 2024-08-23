@@ -1,17 +1,18 @@
+// src/app/services/perfil.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Psicologa } from '../citas/pages/interfaces/psicologa';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class PerfilService {
-    private apiUrl = 'http://localhost:3000/perfil'; // La URL de tu API
+  private baseUrl = 'http://localhost:3000'; // Asegúrate de que esta URL es la correcta
 
-    constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-    // Método para obtener el perfil por ID
-    getPerfil(id: number): Observable<any> {
-        return this.http.get<any>(`${this.apiUrl}/${id}`);
-    }
+  getPerfil(idPsico: number): Observable<Psicologa> {
+    return this.http.get<Psicologa>(`${this.baseUrl}/${idPsico}`);
+  }
 }

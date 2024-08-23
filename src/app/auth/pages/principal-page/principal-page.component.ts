@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchElement } from '../../../citas/pages/search-page/search-page.component';
 
 @Component({
   selector: 'app-list-page',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./principal-page.component.css']  // Asegúrate de que la ruta del archivo CSS sea correcta
 })
 export class PrincipalPageComponent implements OnInit {
+  schedule: SearchElement[] = [];
   title = 'form';
   today!: string;
   times!: string[];
@@ -17,6 +19,8 @@ export class PrincipalPageComponent implements OnInit {
     this.today = now.toISOString().split('T')[0];
     this.times = this.generateTimes();
     this.currentDate = now.toLocaleDateString('es-ES');
+    this.schedule = history.state.schedule;
+  
   }
 
   generateTimes(): string[] {
@@ -24,6 +28,7 @@ export class PrincipalPageComponent implements OnInit {
     for (let hour = 8; hour <= 16; hour++) {
       const time = hour.toString().padStart(2, '0') + ':00';
       times.push(time);
+    
     }
     return times;
   }

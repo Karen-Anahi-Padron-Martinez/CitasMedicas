@@ -15,10 +15,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { MatSidenavContainer } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
-//import { PagePsicologaComponent } from './pages/page-psicologa/page-psicologa.component';
-import { RegisterPageComponent } from '../auth/pages/register-page/register-page.component';
+import { UpdateComponent } from './pages/update/update.component';
 
 
 @NgModule({
@@ -28,9 +27,7 @@ import { RegisterPageComponent } from '../auth/pages/register-page/register-page
     NewPageComponent,
     LayoutPageComponent,
     SearchPageComponent,
-    //PagePsicologaComponent,
-    
-    
+    UpdateComponent, 
   ],
   imports: [
     CommonModule,
@@ -44,6 +41,7 @@ import { RegisterPageComponent } from '../auth/pages/register-page/register-page
     MatInputModule,
     FormsModule,
     MatTableModule,
+    ReactiveFormsModule,
    
 
     RouterModule

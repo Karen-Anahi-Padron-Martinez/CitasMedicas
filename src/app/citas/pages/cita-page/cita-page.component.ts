@@ -1,27 +1,40 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PerfilService } from '../../../services/perfil.service';
+import { Psicologa } from '../interfaces/psicologa';
 
 @Component({
   selector: 'cita-page-pedadoga',
   templateUrl: './cita-page.component.html',
   styleUrls: ['./cita-page.component.css']
 })
-export class CitaPageComponent {
+export class CitaPageComponent implements OnInit {
     
-  psicologa: any = {};
+  psicologa: Psicologa = {
+    idPsico: 0,
+    nombreP: '',
+    apellidoP: '',
+    puesto: '',
+    emailP: ''
+  };
 
   constructor(private perfilService: PerfilService) {}
 
-  psicloga={
-    img:"https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_1280.png"
-    
+  ngOnInit(): void {
+    const userId = this.getUserId(); // Obtiene el ID del usuario desde localStorage
+
+    if (userId !== null) {
+      this.perfilService.getPerfil(userId).subscribe(data => {
+        this.psicologa = data;
+      }, error => {
+        console.error('Error al obtener el perfil:', error);
+      });
+    } else {
+      console.error('No se pudo obtener el ID del usuario.');
+    }
   }
 
-  ngOnInit(): void {
-      const userId = 1; // Cambia esto según la lógica de tu aplicación
-      this.perfilService.getPerfil(userId).subscribe(data => {
-          this.psicologa = data;
-      });
+  getUserId(): number | null {
+    const userId = localStorage.getItem('userId');
+    return userId ? +userId : null;
   }
 }

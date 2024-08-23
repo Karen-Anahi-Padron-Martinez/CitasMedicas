@@ -54,6 +54,21 @@
     <div class="calendar-content">
       <mat-calendar [(selected)]="selectedDate"></mat-calendar>
       <p class="calendar-text">Si quieres agendar una cita rellena el formulario y da click en "Enviar", el apartado login es exclusivo para el departamento psicopedagógico.</p>
+      <br>
+      <h2>Horario de Atención</h2>
+<table>
+  <tr>
+    <th>Día</th>
+    <th>Hora de Inicio</th>
+    <th>Hora de Fin</th>
+  </tr>
+  <tr *ngFor="let element of schedule">
+    <td>{{element.day}}</td>
+    <td>{{element.startTime}}</td>
+    <td>{{element.endTime}}</td>
+  </tr>
+</table>
+
     </div>
   </div>
 

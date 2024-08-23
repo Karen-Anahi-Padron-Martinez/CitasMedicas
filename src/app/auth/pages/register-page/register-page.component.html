@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro</title>
+  <link rel="stylesheet" href="register-page.component.css">
 </head>
-
-  <div class="container" >
-    <mat-card>
+<body>
+  <div class="container" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <mat-card style="max-width: 800px; height: 600px; padding: 16px;">
       <h1>Registro</h1>
 
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="outline" >
+        <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 16px;">
           <mat-label>Dirección de correo electrónico</mat-label>
           <input matInput type="text" formControlName="email">
           <mat-error *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
@@ -19,7 +20,7 @@
           </mat-error>
         </mat-form-field>
 
-        <div class="name-fields">
+        <div class="name-fields" style="display: flex; gap: 16px; margin-bottom: 16px;">
           <mat-form-field appearance="outline" style="flex: 1;">
             <mat-label>Nombre (s)</mat-label>
             <input matInput type="text" formControlName="firstname">
@@ -63,13 +64,12 @@
             </mat-error>
           </mat-form-field>
         </div>
-
         <div style="text-align: center; margin-bottom: 16px;">
           <button mat-button type="submit" color="primary" [disabled]="registerForm.invalid">Registrarse</button>
         </div>
       </form>
-          <br>
-          <br>
+      </mat-card>
+      <mat-card style="max-width: 450px; height: 600px; padding: 16px;">
       <div style="text-align: center; margin-bottom: 16px;">
         <h6>Eliminar Registro</h6>
         <input type="number" placeholder="ID" #deleteId>
@@ -86,31 +86,8 @@
         <input type="password" placeholder="Contraseña" #password>
         <button mat-button type="submit" color="primary" (click)="update(updateId.value, nombre.value, apellido.value, puesto.value, email.value, password.value)">Actualizar</button>
       </div>
-      <div >
-        <h6>Lista de Psicopedagogos</h6>
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Puesto</th>
-              <th>Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let registro of registros">
-              <td>{{ registro.IdPsico }}</td>
-              <td>{{ registro.NombreP }}</td>
-              <td>{{ registro.ApellidoP }}</td>
-              <td>{{ registro.Puesto }}</td>
-              <td>{{ registro.EmailP }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </mat-card>
+    </mat-card>-->
   </div>
-  
+</body>
 </html>
 

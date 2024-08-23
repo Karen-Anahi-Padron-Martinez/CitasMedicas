@@ -29,6 +29,7 @@ export class LoginPageComponent implements OnInit{
             if (response.message === 'Registro agregado') {
               alert('Login exitoso');
               console.log(response.registro);
+              this.authService.saveUserData(response);
               this.router.navigate(['/citas/layout']);// Puedes redirigir al usuario a otra página aquí
             } else {
               alert(response.message);

@@ -5,8 +5,9 @@ import { NewPageComponent } from './pages/new-page/new-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { CitaPageComponent } from './pages/cita-page/cita-page.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
-//import { PagePsicologaComponent } from './pages/page-psicologa/page-psicologa.component';
 import { RegisterPageComponent } from '../auth/pages/register-page/register-page.component';
+import { UpdateComponent } from './pages/update/update.component';
+
 
 const routes: Routes = [
   {
@@ -17,8 +18,8 @@ const routes: Routes = [
       {path: 'search',component:SearchPageComponent},
       {path: 'agregar',component: RegisterPageComponent},
       {path:'list',component: ListPageComponent},
+      {path:'update',component: UpdateComponent},
       {path: ':id',component: CitaPageComponent},
-      //{path :'perfil',component:PagePsicologaComponent },
       {path: '**',redirectTo: 'List'}
 
 
