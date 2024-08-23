@@ -69,8 +69,35 @@
           <button mat-button type="submit" color="primary" [disabled]="registerForm.invalid">Registrarse</button>
         </div>
       </form>
+      
+<!-- Tabla de Registros -->
+<!--<h2 style="text-align: center;">Usuarios Registrados</h2>
+<table mat-table [dataSource]="registros" class="mat-elevation-z8">
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> Correo </th>
+    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+  </ng-container>
 
-      <div style="text-align: center; margin-bottom: 16px;">
+  <ng-container matColumnDef="firstname">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastname">
+    <th mat-header-cell *matHeaderCellDef> Apellido </th>
+    <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="userType">
+    <th mat-header-cell *matHeaderCellDef> Tipo de Usuario </th>
+    <td mat-cell *matCellDef="let element"> {{element.userType}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="['email', 'firstname', 'lastname', 'userType']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['email', 'firstname', 'lastname', 'userType'];"></tr>
+</table>-->
+
+      <!--<div style="text-align: center; margin-bottom: 16px;">
         <h6>Eliminar Registro</h6>
         <input type="number" placeholder="ID" #deleteId>
         <button mat-button type="submit" color="primary" (click)="delete(deleteId.value)">Eliminar</button>
@@ -85,9 +112,10 @@
         <input type="text" placeholder="Correo Electrónico" #email>
         <input type="password" placeholder="Contraseña" #password>
         <button mat-button type="submit" color="primary" (click)="update(updateId.value, nombre.value, apellido.value, puesto.value, email.value, password.value)">Actualizar</button>
-      </div>
+      </div>-->
     </mat-card>
   </div>
+  
 </body>
 </html>
 

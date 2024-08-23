@@ -12,5 +12,6 @@ export class LayoutPageComponent {
     {label:'Historial del citas',icon:'manage_search', url:'./new-cita'},
     {label:'Horario', icon: 'schedule', url:'./search'},
     {label:'Añadir Usuario', icon: 'person_add', url:'./agregar'},
+    {label:'Actualizar y Eliminar', icon: 'sync', url:'./update'}
   ]
 }

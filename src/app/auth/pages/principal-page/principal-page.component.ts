@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EstudianteService } from '../../../services/estudiante.service';
 import { PsicoService } from '../../../services/psico.service';
+import { SearchElement } from '../../../citas/pages/search-page/search-page.component';
 
 @Component({
   selector: 'app-principal-page',
@@ -10,6 +11,7 @@ import { PsicoService } from '../../../services/psico.service';
   styleUrls: ['./principal-page.component.css']
 })
 export class PrincipalPageComponent implements OnInit {
+  schedule: SearchElement[] = [];
   today!: string;
   times!: string[];
   currentDate!: string;
@@ -25,6 +27,7 @@ export class PrincipalPageComponent implements OnInit {
     private psicoService: PsicoService
   ) {
     this.studentForm = this.fb.group({
+      
       id: [null],
       nombre: ['', [Validators.required]],
       area: ['', [Validators.required]],

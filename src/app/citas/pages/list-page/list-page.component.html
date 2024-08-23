@@ -1,4 +1,78 @@
-<!--<!DOCTYPE html>
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario estudiantes</title>
+  <link rel="stylesheet" href="list-page.component.css">
+</head>
+
+<body>
+  <header>
+    <h1>Psicocitas</h1>
+    <!--<button mat-button [routerLink]="['/auth/login']" color="primary" class="btn">Login</button>-->
+  </header>
+
+  <div class="main-content">
+    <div class="form-content">
+      <h2>Completa los campos</h2>
+      <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" formControlName="nombre" required>
+        <div *ngIf="studentForm.get('nombre')?.invalid && studentForm.get('nombre')?.touched">
+          <span *ngIf="studentForm.get('nombre')?.hasError('required')">El nombre es obligatorio.</span>
+        </div>
+
+        <label for="area">Área académica:</label>
+        <select id="area" formControlName="area" required>
+          <option value="Administración Capital Humano">Administración Capital Humano</option>
+          <option value="Mercadotecnia">Mercadotecnia</option>
+          <option value="Contaduría">Contaduría</option>
+          <option value="Turismo">Turismo</option>
+          <option value="Desarrollo de Software">Desarrollo de Software</option>
+          <option value="Redes Digitales">Redes Digitales</option>
+          <option value="Entornos Virtuales">Entornos Virtuales</option>
+          <option value="Diseño Digital">Diseño Digital</option>
+          <option value="Mecatronica">Mecatrónica</option>
+          <option value="Procesos Industriales">Procesos Industriales</option>
+          <option value="Energías Renovables">Energías Renovables</option>
+        </select>
+        <div *ngIf="studentForm.get('area')?.invalid && studentForm.get('area')?.touched">
+          <span *ngIf="studentForm.get('area')?.hasError('required')">El área académica es obligatoria.</span>
+        </div>
+
+        <label for="grupo">Grupo:</label>
+        <input type="text" id="grupo" formControlName="grupo" required>
+        <div *ngIf="studentForm.get('grupo')?.invalid && studentForm.get('grupo')?.touched">
+          <span *ngIf="studentForm.get('grupo')?.hasError('required')">El grupo es obligatorio.</span>
+        </div>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" required>
+          <mat-error *ngIf="studentForm.get('email')?.invalid && studentForm.get('email')?.touched">
+            <span *ngIf="studentForm.get('email')?.hasError('required')">El email es obligatorio.</span>
+            <span *ngIf="studentForm.get('email')?.hasError('email')">Debe ser un email válido.</span>
+          </mat-error>
+        </mat-form-field>
+
+        <label for="numero">Número de control:</label>
+        <input type="number" id="numero" formControlName="numero" required>
+        <div *ngIf="studentForm.get('numero')?.invalid && studentForm.get('numero')?.touched">
+          <span *ngIf="studentForm.get('numero')?.hasError('required')">El número de control es obligatorio.</span>
+        </div>
+
+        
+
+        <button class="btn" type="submit" [disabled]="studentForm.invalid">Enviar</button>
+        <button class="btn" type="reset" (click)="resetForm()">Limpiar</button>
+      </form>
+    </div>
+    <!--<!DOCTYPE html>
 <html lang="es">
 
 <head>

@@ -74,6 +74,20 @@
     <div class="calendar-content">
       <mat-calendar [(selected)]="selectedDate"></mat-calendar>
       <p class="calendar-text">Si quieres agendar una cita rellena el formulario y da click en "Enviar", el apartado login es exclusivo para el departamento psicopedagógico.</p>
+      <br>
+     <!--<h2>Horario de Atención</h2>
+<table>
+  <tr>
+    <th>Día</th>
+    <th>Hora de Inicio</th>
+    <th>Hora de Fin</th>
+  </tr>
+  <tr *ngFor="let element of schedule">
+    <td>{{element.day}}</td>
+    <td>{{element.startTime}}</td>
+    <td>{{element.endTime}}</td>
+  </tr>
+</table>-->
     </div>
 
     <div class="student-list">
@@ -100,7 +114,7 @@
             <td>{{ estudiante.NumControl }}</td>
             <td><a [routerLink]="['/auth/hacercita', estudiante.IdUsuario]">haz tu cita</a></td>
             <td>
-              <button (click)="onEdit(estudiante.IdUsuario)">Modificar</button>
+             <!--<button (click)="onEdit(estudiante.IdUsuario)">Modificar</button>-->
               <button (click)="onDelete(estudiante.IdUsuario)">Eliminar</button>
             </td>
           </tr>
