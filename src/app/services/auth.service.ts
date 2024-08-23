@@ -25,4 +25,22 @@ export class AuthService {
     deletePsicopedagogia(id: number): Observable<any> {
       return this.http.delete(`${this.baseUrl}/delete_psicopedagogia/${id}`);
     }
+
+      // src/app/services/auth.service.ts
+saveUserData(response: any): void {
+  localStorage.setItem('userId', response.userId); // Asegúrate de que `response.userId` es el campo correcto
+  localStorage.setItem('authToken', response.token); // Si es necesario
+}
+
+// Obtener todos los registros
+getPsicopedagogias(): Observable<any> {
+  return this.http.get(`${this.baseUrl}`);
+}
+
+// Obtener un registro por ID
+getPsicopedagogiasById(id: number): Observable<any> {
+  return this.http.get(`${this.baseUrl}/${id}`);
+}
+
+
 }

@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CodigoPageComponent } from './pages/codigo-page/codigo-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { ResetPageComponent } from './pages/reset-page/reset-page.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -33,7 +34,8 @@ import { ResetPageComponent } from './pages/reset-page/reset-page.component';
     MatInputModule,
     MatCardModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
    
     
   ]

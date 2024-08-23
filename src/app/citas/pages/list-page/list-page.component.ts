@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EstudianteService } from '../../../services/estudiante.service';
 import { PsicoService } from '../../../services/psico.service';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-list-page',  // Cambio de selector
@@ -11,12 +10,12 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./list-page.component.css']  // Ruta correcta del archivo de estilos
 })
 export class ListPageComponent implements OnInit {  // Cambio del nombre de la clase
+
   today!: string;
   times!: string[];
   currentDate!: string;
   selectedDate!: Date;
   estudiantes: any[] = [];
-  estudianteForm!: FormGroup;
   studentForm!: FormGroup;
   psicologos: any[] = [];
 
@@ -27,6 +26,7 @@ export class ListPageComponent implements OnInit {  // Cambio del nombre de la c
     private psicoService: PsicoService
   ) {
     this.studentForm = this.fb.group({
+      
       id: [null],
       nombre: ['', [Validators.required]],
       area: ['', [Validators.required]],
@@ -75,7 +75,7 @@ export class ListPageComponent implements OnInit {  // Cambio del nombre de la c
   onSubmit(): void {
     if (this.studentForm.valid) {
       const formValue = this.studentForm.value;
-
+  
       if (formValue.id === null) {
         this.estudianteService.createEstudiante(formValue).subscribe(
           (response: any) => {
@@ -105,6 +105,7 @@ export class ListPageComponent implements OnInit {  // Cambio del nombre de la c
       }
     }
   }
+  
 
   onEdit(id: number): void {
     this.estudianteService.getEstudiante(id).subscribe(
@@ -115,7 +116,10 @@ export class ListPageComponent implements OnInit {  // Cambio del nombre de la c
           area: estudiante.area || '',
           grupo: estudiante.grupo || '',
           email: estudiante.email || '',
-          numero: estudiante.numero || ''
+          numero: estudiante.numero || '',
+          dia: estudiante.dia || '',
+          hora: estudiante.hora || '',
+          psico: estudiante.psico || ''
         });
       },
       err => console.error('Error al obtener estudiante', err)
@@ -143,7 +147,10 @@ export class ListPageComponent implements OnInit {  // Cambio del nombre de la c
       area: '',
       grupo: '',
       email: '',
-      numero: ''
+      numero: '',
+      dia: '',
+      hora: '',
+      psico: ''
     });
   }
 }
