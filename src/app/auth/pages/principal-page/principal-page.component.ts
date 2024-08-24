@@ -12,6 +12,7 @@ import { SearchElement } from '../../../citas/pages/search-page/search-page.comp
 })
 export class PrincipalPageComponent implements OnInit {
   schedule: SearchElement[] = [];
+  title = 'form';
   today!: string;
   times!: string[];
   currentDate!: string;
@@ -42,6 +43,7 @@ export class PrincipalPageComponent implements OnInit {
     this.today = now.toISOString().split('T')[0];
     this.times = this.generateTimes();
     this.currentDate = now.toLocaleDateString('es-ES');
+    this.schedule = history.state.schedule;
     this.loadEstudiantes();
     this.getPsicologos();
   }

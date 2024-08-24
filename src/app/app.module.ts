@@ -59,7 +59,8 @@ import { CitaComponent } from './pages/cita/cita.component';
     MatMenuModule,
     MatSidenavModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [
     provideAnimationsAsync()
