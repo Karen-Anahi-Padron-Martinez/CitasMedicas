@@ -20,6 +20,7 @@ import { MatTableModule } from '@angular/material/table';
 //import { PagePsicologaComponent } from './pages/page-psicologa/page-psicologa.component';
 import { RegisterPageComponent } from '../auth/pages/register-page/register-page.component';
 import { UpdateComponent } from './pages/update/update.component';
+import { ListComponent } from './pages/list/list.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { UpdateComponent } from './pages/update/update.component';
     LayoutPageComponent,
     SearchPageComponent,
     UpdateComponent,
+    ListComponent,
     //PagePsicologaComponent,
     
     
