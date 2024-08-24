@@ -12,7 +12,7 @@ export class UpdateComponent implements OnInit {
   updateForm!: FormGroup;
   deleteForm!: FormGroup;
   registros: any[] = [];  // Propiedad para almacenar los registros
-
+  
   constructor(private fb: FormBuilder, private authService: AuthService) {}
 
   ngOnInit(): void {
@@ -62,16 +62,19 @@ export class UpdateComponent implements OnInit {
     };
     this.authService.updatePsicopedagogia(numericId, data).subscribe(response => {
       console.log('Registro actualizado:', response);
+      alert('Registro actualizado correctamente');
     });
   }
   delete(id: string) {
     const numericId = Number(id);
     if (isNaN(numericId)) {
       console.error('El ID debe ser un número');
+      alert(' El ID debe de ser un numero');
       return;
     }
     this.authService.deletePsicopedagogia(numericId).subscribe(response => {
       console.log('Registro eliminado:', response);
+      alert('Registro eliminado correctamente');
     });
   }
 }

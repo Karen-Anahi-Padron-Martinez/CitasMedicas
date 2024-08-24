@@ -33,8 +33,8 @@ saveUserData(response: any): void {
 }
 
 // Obtener todos los registros
-getPsicopedagogias(): Observable<any> {
-  return this.http.get(`${this.baseUrl}`);
+getPsicopedagogias(): Observable<any[]> {
+  return this.http.get<any[]>(`${this.baseUrl}/psicopedagogias`);
 }
 
 // Obtener un registro por ID

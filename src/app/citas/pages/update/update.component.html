@@ -1,4 +1,80 @@
-<mat-card style="max-width: 450px; height: 600px; padding: 16px;">
+
+
+<div class="container" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <mat-card style="max-width: 450px; height: 600px; padding: 16px;">
+    <div style="text-align: center; margin-bottom: 16px;">
+  <form [formGroup]="deleteForm" (ngSubmit)="delete(deleteForm.get('id')?.value)">
+    <h6>Eliminar Registro</h6>
+    <mat-form-field appearance="fill">
+      <mat-label>ID</mat-label>
+      <input matInput placeholder="ID" formControlName="id" type="number">
+      <mat-error *ngIf="deleteForm.get('id')?.hasError('required')">ID es obligatorio</mat-error>
+      <mat-error *ngIf="deleteForm.get('id')?.hasError('pattern')">ID debe ser un número</mat-error>
+    </mat-form-field>
+    <button mat-button type="submit" color="primary" [disabled]="deleteForm.invalid">Eliminar</button>
+  </form>
+    </div>
+</mat-card>
+
+<mat-card style="max-width: 450px; padding: 16px;">
+  <form [formGroup]="updateForm" (ngSubmit)="update(updateForm.get('id')?.value, updateForm.get('nombre')?.value, updateForm.get('apellido')?.value, updateForm.get('puesto')?.value, updateForm.get('email')?.value)">
+    <h6>Actualizar Registro</h6>
+    <mat-form-field appearance="fill">
+      <mat-label>ID</mat-label>
+      <input matInput placeholder="ID" formControlName="id" type="number"  [disabled]="true">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="Nombre" formControlName="nombre">
+      <mat-error *ngIf="updateForm.get('nombre')?.hasError('required')">Nombre es obligatorio</mat-error>
+      <mat-error *ngIf="updateForm.get('nombre')?.hasError('minlength')">Nombre debe tener al menos 2 caracteres</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Apellido</mat-label>
+      <input matInput placeholder="Apellido" formControlName="apellido">
+      <mat-error *ngIf="updateForm.get('apellido')?.hasError('required')">Apellido es obligatorio</mat-error>
+      <mat-error *ngIf="updateForm.get('apellido')?.hasError('minlength')">Apellido debe tener al menos 2 caracteres</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Puesto</mat-label>
+      <input matInput placeholder="Puesto" formControlName="puesto">
+      <mat-error *ngIf="updateForm.get('puesto')?.hasError('required')">Puesto es obligatorio</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Correo Electrónico</mat-label>
+      <input matInput placeholder="Correo Electrónico" formControlName="email">
+      <mat-error *ngIf="updateForm.get('email')?.hasError('required')">Correo Electrónico es obligatorio</mat-error>
+      <mat-error *ngIf="updateForm.get('email')?.hasError('email')">Correo Electrónico no es válido</mat-error>
+    </mat-form-field>
+    <button mat-button type="submit" color="primary" [disabled]="updateForm.invalid">Actualizar</button>
+  </form>
+</mat-card>
+<mat-card style="max-width: 450px; padding: 16px;">
+  <h2 style="text-align: center;">Registros</h2>
+  <table mat-table [dataSource]="registros" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.IdPsico}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.NombreP}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="apellido">
+      <th mat-header-cell *matHeaderCellDef> Apellido </th>
+      <td mat-cell *matCellDef="let element"> {{element.ApellidoP}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['id', 'nombre', 'apellido']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['id', 'nombre', 'apellido'];" (click)="seleccionarRegistro(row)"></tr>
+  </table>
+</mat-card>
+
+
+
+<!--<mat-card style="max-width: 450px; height: 600px; padding: 16px;">
     <div style="text-align: center; margin-bottom: 16px;">
       <h6>Eliminar Registro</h6>
       <input type="number" placeholder="ID" #deleteId>
@@ -12,10 +88,10 @@
       <input type="text" placeholder="Apellido" #apellido>
       <input type="text" placeholder="Puesto" #puesto>
       <input type="text" placeholder="Correo Electrónico" #email>
-      <!--<input type="password" placeholder="Contraseña" #password>-->
+      <input type="password" placeholder="Contraseña" #password>
       <button mat-button type="submit" color="primary" (click)="update(updateId.value, nombre.value, apellido.value, puesto.value, email.value)">Actualizar</button>
     </div>
-  </mat-card>
+  </mat-card>-->
 
 
 <!--<div class="container" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
