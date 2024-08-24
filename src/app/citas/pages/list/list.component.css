@@ -1,0 +1,275 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #bf2558; /* Pastel pink background */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ab47bc; /* Pastel purple */
+    color: white;
+  }
+  
+  .main-content {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    background: linear-gradient(
+      50deg,
+      #07dccb 50%, /* Pastel turquoise */
+      #7fcad4 50%
+    );
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .form-content h2 {
+    color: #7e2aac; /* Deep pastel purple */
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  label {
+    font-size: 17px;
+    color: #d975d1; /* Medium pastel purple */
+    align-self: flex-start;
+  }
+  
+  input, textarea, select {
+    padding: 10px;
+    background-color: #cdf3f3; /* Light pastel purple */
+    border: none;
+    font-size: 15px;
+    color: #000000; /* Deep pastel purple */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  .btn {
+    background-color: #5496ff; /* Pastel violet */
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .btn mat-icon {
+    margin-right: 5px;
+  }
+  
+  .calendar-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .calendar-content mat-calendar {
+    width: 100%;
+    height: auto;
+  }
+  
+  .calendar-text {
+    margin-top: 20px;
+    color: #6a1b9a; /* Deep pastel purple */
+    text-align: center;
+    width: 100%;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px 20px;
+    background-color: #d76bea; /* Pastel purple */
+    color: rgb(4, 0, 0);
+  }
+  
+  .email-icons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .email-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .email-row mat-icon {
+    margin-right: 5px;
+  }
+  
+  .date {
+    align-self: flex-end;
+  }
+  button{
+    color:aqua;
+    width: 200px;
+    height: 50px;
+  }
+  h1{
+    color: aliceblue;
+  }
+  /* Estilos generales para la tabla */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para las celdas de encabezado */
+  th {
+    background-color: #e10df0; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 12px 15px;
+    text-transform: uppercase; /* Mayúsculas */
+    letter-spacing: 0.03em; /* Espaciado entre letras */
+  }
+  
+  /* Estilos para las celdas de datos */
+  td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dddddd; /* Línea divisoria */
+    color: rgb(17, 16, 16);
+  }
+  
+  /* Estilos para alternar el color de las filas */
+  tr:nth-child(even) {
+    background-color: #f2f2f2; /* Color de fondo para filas pares */
+  }
+  
+  /* Estilos para la fila al pasar el ratón */
+  tr:hover {
+    background-color: #f1f1f1; /* Color de fondo al pasar el ratón */
+    transition: background-color 0.3s ease; /* Transición suave */
+  }
+  
+  /* Estilo de borde redondeado para la tabla */
+  table {
+    border-radius: 8px;
+    overflow: hidden; /* Ocultar bordes redondeados en filas */
+  }
+  
+  /* Estilos para mejorar el aspecto en pantallas pequeñas */
+  @media (max-width: 768px) {
+    table {
+      font-size: 0.9em;
+    }
+  
+    th, td {
+      padding: 8px 10px;
+    }
+  }
+  
+  /* Estilos opcionales para un título más estilizado */
+  h2 {
+    color: #002679; /* Color del texto */
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  mat-label {
+    color: #d975d1; /* Medium pastel purple */
+    font-size: 17px;
+  }
+  
+  input[matInput] {
+    padding: 10px;
+  /* Light pastel purple */
+    border: none;
+    font-size: 15px;
+    color: #000000; /* Deep pastel purple */
+    border-radius: 10px;
+    width: 100%; /* Asegura que el input ocupe todo el ancho disponible */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+  }
+  
+  mat-error {
+    color: #e10df0; /* Color del texto de error */
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  mat-form-field.appearance-outline .mat-form-field-outline {
+    color: #d975d1; /* Medium pastel purple */
+  }
+  
+  mat-form-field.appearance-outline .mat-form-field-outline-thick {
+    border-color: #7e2aac; /* Deep pastel purple */
+  }
+  
+  mat-form-field.appearance-outline .mat-form-field-outline-start,
+  mat-form-field.appearance-outline .mat-form-field-outline-end {
+    border-radius: 10px;
+  }
+  
+  .mat-focused .mat-form-field-label {
+    color: #7e2aac; /* Deep pastel purple */
+  }
+  button {
+    background-color: #ff4d4d; /* Color de fondo rojo */
+    border: none; /* Sin borde */
+    color: white; /* Texto en blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    text-align: center; /* Alineación centrada */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mostrar como elemento en línea */
+    font-size: 16px; /* Tamaño de la fuente */
+    margin: 4px 2px; /* Margen entre botones */
+    cursor: pointer; /* Cursor de mano al pasar sobre el botón */
+    border-radius: 4px; /* Bordes redondeados */
+    transition-duration: 0.4s; /* Transición suave al pasar sobre el botón */
+}
+
+button:hover {
+    background-color: #e60000; /* Color de fondo al pasar sobre el botón */
+    color: white; /* Color de texto al pasar sobre el botón */
+}
+
+  

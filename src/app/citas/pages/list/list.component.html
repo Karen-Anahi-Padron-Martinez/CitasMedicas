@@ -1,0 +1,31 @@
+<div class="student-list">
+    <h2>Lista de Estudiantes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>IdUsuario</th>
+          <th>Nombre</th>
+          <th>Área Académica</th>
+          <th>Grupo</th>
+          <th>Correo</th>
+          <th>Número de Control</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let estudiante of estudiantes">
+          <td>{{ estudiante.IdUsuario }}</td>
+          <td>{{ estudiante.Nombre }}</td>
+          <td>{{ estudiante.AreaAcademica }}</td>
+          <td>{{ estudiante.Grupo }}</td>
+          <td>{{ estudiante.EmailA }}</td>
+          <td>{{ estudiante.NumControl }}</td>
+          <td><a [routerLink]="['/auth/hacercita', estudiante.IdUsuario]">haz tu cita</a></td>
+          <td>
+           <!--<button (click)="onEdit(estudiante.IdUsuario)">Modificar</button>-->
+            <button (click)="onDelete(estudiante.IdUsuario)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
