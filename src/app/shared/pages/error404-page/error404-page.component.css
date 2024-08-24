@@ -1,0 +1,38 @@
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .error-title {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    margin: 0;
+  }
+  
+  .error-message {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 20px 0;
+  }
+  
+  .error-instruction {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .error-instruction a {
+    color: #ff6b6b;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .error-instruction a:hover {
+    text-decoration: underline;
+  }
+  
